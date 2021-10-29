@@ -8,6 +8,7 @@ import {environment} from "../environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
