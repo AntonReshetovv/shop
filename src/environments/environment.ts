@@ -1,14 +1,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DATABASE_URL,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.APP_ID,
-    measurementId: process.env.MEASUREMENT_ID,
+    apiKey: 'AIzaSyCa7pRrUjZMl3tw2IcbsLtL1415Ae9GITc',
+    authDomain: 'products-53867.firebaseapp.com',
+    databaseURL: 'https://products-53867-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'products-53867',
+    storageBucket: 'products-53867.appspot.com',
+    messagingSenderId: '276810958535',
+    appId: '1:276810958535:web:7830edc49a0bec927be0e2',
+    measurementId: 'G-B88M4G8QRG',
   },
 };
 
