@@ -4,9 +4,9 @@ import {LoginComponent} from "./auth/login/login.component";
 import {RegistrationComponent} from "./auth/registration/registration.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent}
+  {path: '', redirectTo: '/api/login', pathMatch: 'full'},
+  {path: 'api/login', component: LoginComponent},
+  {path: 'api/registration', component: RegistrationComponent}
 ];
 
 @NgModule({
