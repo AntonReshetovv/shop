@@ -1,11 +1,11 @@
 <mat-card class="card">
-  <mat-card-title>Авторизация</mat-card-title>
+  <mat-card-title>Вход</mat-card-title>
   <mat-card-subtitle>Укажите эл.почту и пароль</mat-card-subtitle>
   <mat-card-content>
-    <form class="form">
+    <form class="form" [formGroup]="loginForm">
       <mat-form-field class="form__field">
         <mat-label>Эл.почта</mat-label>
-        <input type="email" matInput>
+        <input type="email" formControlName="email" matInput>
         <mat-error>
           Please enter a valid email address
         </mat-error>
@@ -13,14 +13,14 @@
 
       <mat-form-field class="form__field">
         <mat-label>Пароль</mat-label>
-        <input type="password" matInput>
+        <input type="password" formControlName="password" matInput>
         <mat-error>
           Please enter a valid password address
         </mat-error>
       </mat-form-field>
 
       <mat-card-actions>
-        <button mat-button>Войти</button>
+        <button type="submit" mat-button>ВОЙТИ</button>
       </mat-card-actions>
     </form>
   </mat-card-content>
