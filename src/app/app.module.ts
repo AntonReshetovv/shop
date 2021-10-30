@@ -9,16 +9,19 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {ReactiveFormsModule} from "@angular/forms";
+import { RegistrationComponent } from './auth/registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatButtonModule,
     MatInputModule,
     MatToolbarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
