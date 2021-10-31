@@ -2,7 +2,7 @@
   <mat-card-title>Регистрация</mat-card-title>
   <mat-card-subtitle>Укажите эл.почту и пароль</mat-card-subtitle>
   <mat-card-content>
-    <form class="form" [formGroup]="registrationForm">
+    <form class="form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="form__field">
         <mat-label>Эл.почта</mat-label>
         <input type="email" formControlName="email" matInput>

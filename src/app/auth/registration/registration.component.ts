@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-registration',
@@ -13,9 +14,13 @@ export class RegistrationComponent implements OnInit {
     password: ['']
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    this.authService.registration(this.registrationForm.value)
   }
 
 }
