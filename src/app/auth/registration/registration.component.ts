@@ -11,7 +11,7 @@ export class RegistrationComponent implements OnInit {
 
   registrationForm = this.fb.group({
     email: ['', [Validators.email]],
-    password: ['']
+    password: ['', [Validators.minLength(4)]]
   })
 
   constructor(private fb: FormBuilder, private authService: AuthService) { }
