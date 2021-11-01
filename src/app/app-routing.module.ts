@@ -4,6 +4,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import {RegistrationComponent} from "./auth/registration/registration.component";
 import {CatalogComponent} from "./catalog/catalog.component";
 import {AuthLayoutComponent} from "./shared/layout/auth-layout/auth-layout.component";
+import {ContentLayoutComponent} from "./shared/layout/content-layout/content-layout.component";
 
 const routes: Routes = [
   {
@@ -13,7 +14,12 @@ const routes: Routes = [
       {path: 'api/registration', component: RegistrationComponent},
     ]
   },
-  {path: 'api/catalog', component: CatalogComponent}
+  {
+    path: 'api/overview', component: ContentLayoutComponent, children: [
+      {path: 'api/overview', redirectTo: 'api/overview/catalog', pathMatch: 'full'},
+      {path: 'api/overview/catalog', component: CatalogComponent},
+    ]
+  }
 ];
 
 @NgModule({
