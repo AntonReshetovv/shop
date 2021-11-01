@@ -16,8 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'api/overview', component: ContentLayoutComponent, children: [
-      {path: 'api/overview', redirectTo: 'api/overview/catalog', pathMatch: 'full'},
-      {path: 'api/overview/catalog', component: CatalogComponent},
+      {path: 'catalog', component: CatalogComponent},
     ]
   }
 ];
