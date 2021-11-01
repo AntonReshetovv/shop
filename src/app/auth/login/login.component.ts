@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginForm = this.fb.group({
     email: ['', [Validators.email]],
-    password: ['']
+    password: ['', [Validators.minLength(4)]]
   })
 
   constructor(private fb: FormBuilder, private authService: AuthService) { }
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
     return this.authService.login(this.loginForm.value)
   }
 
