@@ -30,7 +30,7 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(authPayload.email, authPayload.password)
       .then(data => {
         console.log('loginData', data)
-        this.router.navigate(['api/catalog'])
+        this.router.navigate(['api/overview'])
         return data
       })
       .catch((err) => {

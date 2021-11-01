@@ -1,0 +1,12 @@
+<mat-drawer-container class="container">
+  <mat-drawer mode="side" opened>
+    <h3>Админка</h3>
+    <nav>
+      <a routerLink="api/overview/catalog">Каталог</a>
+      <a routerLin="">Добавить в каталог</a>
+    </nav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
