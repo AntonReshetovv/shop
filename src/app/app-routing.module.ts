@@ -5,6 +5,7 @@ import {RegistrationComponent} from "./auth/registration/registration.component"
 import {CatalogComponent} from "./catalog/catalog.component";
 import {AuthLayoutComponent} from "./shared/layout/auth-layout/auth-layout.component";
 import {ContentLayoutComponent} from "./shared/layout/content-layout/content-layout.component";
+import {ProductFormComponent} from "./product-form/product-form.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   {
     path: 'api/overview', component: ContentLayoutComponent, children: [
       {path: 'catalog', component: CatalogComponent},
+      {path: 'create-product', component: ProductFormComponent},
     ]
   }
 ];
