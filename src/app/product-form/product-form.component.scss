@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: #fff;
+
+  h3 {
+    margin: 0 0 16px;
+    padding: 10px 40px;
+    border-bottom: 1px solid #e6e6e6;
+    font-weight: 500;
+    color: #fff;
+    background-color: #3f51b5;
+  }
+}
+
+.form {
+  padding: 10px 40px;
+  max-width: 600px;
+
+  p {
+    font-weight: 500;
+  }
+
+  &__field {
+    display: block;
+  }
+
+  input {
+    caret-color: #3f51b5;
+  }
+}

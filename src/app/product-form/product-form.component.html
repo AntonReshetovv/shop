@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <h3>Добавить в каталог</h3>
+  <form class="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <p>Форма добавления продукта в каталог</p>
+    <mat-form-field class="form__field">
+      <mat-label>Название</mat-label>
+      <input type="text" formControlName="title" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="form__field">
+      <mat-label>Цена</mat-label>
+      <input type="text" formControlName="price" matInput>
+    </mat-form-field>
+    <button type="submit" mat-button>ДОБАВИТЬ</button>
+  </form>
+
+</div>
+

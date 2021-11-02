@@ -23,6 +23,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { ProductFormComponent } from './product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     RegistrationComponent,
     CatalogComponent,
     AuthLayoutComponent,
-    ContentLayoutComponent
+    ContentLayoutComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
