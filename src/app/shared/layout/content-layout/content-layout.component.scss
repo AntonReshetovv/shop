@@ -6,9 +6,10 @@
 
 h3 {
   padding: 10px;
-  border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
-  color: #4e4e4e;
+  font-weight: 500;
+  color: #fff;
+  background-color: #3f51b5;
 }
 
 nav {
@@ -22,9 +23,8 @@ nav {
 
     &:hover {
       cursor: pointer;
-      opacity: 0.8;
       transition: 0.2s;
-      background-color: #fff7da;
+      background: rgba(63, 81, 181, 0.1);
     }
   }
 }
