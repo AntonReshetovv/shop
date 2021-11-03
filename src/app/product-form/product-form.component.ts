@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
+import {FormBuilder} from "@angular/forms";
+import {HttpService} from "../shared/services/http.service";
 
 @Component({
   selector: 'app-product-form',
@@ -13,13 +14,13 @@ export class ProductFormComponent implements OnInit {
     price: ['']
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private httpService: HttpService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    console.log('Добавить')
+    this.httpService.createProduct(this.productForm.value)
   }
 
 }
