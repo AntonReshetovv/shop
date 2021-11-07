@@ -11,7 +11,7 @@ export class ProductFormComponent implements OnInit {
 
   productForm = this.fb.group({
     title: [''],
-    price: ['']
+    price: []
   })
 
   constructor(private fb: FormBuilder, private httpService: HttpService) { }
