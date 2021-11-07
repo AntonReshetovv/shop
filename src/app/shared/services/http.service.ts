@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireList, AngularFireObject} from "@angular/fire/compat/database";
 import {ProductItem} from "../interfaces/product-item";
+import {HttpErrorResponse, HttpStatusCode} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,15 @@ export class HttpService {
   }
 
   createProduct(product: ProductItem) {
-    console.log('product', product)
+    // Написал return для того, что по хорошему backend должен возвращать
+    // statusCode === 400, я пользуюсь fireBase,
+    // по этому я просто делаю return чтобы в БД ничего не добавлять
+    if(!product.price || !product.title){
+      return
+    }
     return this.productsRef.push({
       title: product.title,
-      price: product.price,
+      price: Number(product.price),
     })
   }
 
