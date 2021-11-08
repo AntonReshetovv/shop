@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {AngularFireDatabase, AngularFireList, AngularFireObject} from "@angular/fire/compat/database";
+import {AngularFireDatabase, AngularFireList} from "@angular/fire/compat/database";
 import {ProductItem} from "../interfaces/product-item";
-import {HttpErrorResponse, HttpStatusCode} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
