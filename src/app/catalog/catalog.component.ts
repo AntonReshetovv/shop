@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ProductItem} from "../shared/interfaces/product-item";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
-import {HttpService} from "../shared/services/http.service";
 import {map} from "rxjs/operators";
+import {ProductItem} from "../shared/interfaces/product-item";
+import {HttpService} from "../shared/services/http.service";
 
 @Component({
   selector: 'app-catalog',
@@ -35,7 +35,6 @@ export class CatalogComponent implements OnInit {
         changes.map((data) => ({key: data.payload.key, ...data.payload.val()}))
       ))
     ).subscribe((data) => {
-      console.log('data', data)
       this.products = data;
       this.dataSource = new MatTableDataSource(this.products)
       this.dataSource.sort = this.sort;
