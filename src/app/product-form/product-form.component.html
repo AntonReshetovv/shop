@@ -5,11 +5,17 @@
     <mat-form-field class="form__field">
       <mat-label>Название</mat-label>
       <input type="text" formControlName="title" matInput>
+      <mat-error *ngIf="productForm.controls['title'].hasError('required')">
+        Укажите название товара
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="form__field">
       <mat-label>Цена</mat-label>
       <input type="number" formControlName="price" matInput>
+      <mat-error *ngIf="productForm.controls['price'].hasError('required')">
+        Укажите стоимость товара
+      </mat-error>
     </mat-form-field>
     <button type="submit" mat-button [disabled]="productForm.invalid">ДОБАВИТЬ</button>
   </form>

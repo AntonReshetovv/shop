@@ -10,7 +10,7 @@ import {HttpService} from "../shared/services/http.service";
 export class ProductFormComponent implements OnInit {
 
   productForm = this.fb.group({
-    title: ['', [Validators.required,Validators.minLength(1)]],
+    title: ['', [Validators.required]],
     price: [null, [Validators.required]]
   })
 
