@@ -18,10 +18,9 @@ export class HttpService {
   }
 
   createProduct(product: ProductItem) {
-    this.router.navigate(['api/overview/catalog'])
     return this.productsRef.push({
       title: product.title,
-      price: Number(product.price),
+      price: product.price,
     })
   }
 
