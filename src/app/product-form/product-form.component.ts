@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {HttpService} from "../shared/services/http.service";
-import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-form',
@@ -11,28 +10,17 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class ProductFormComponent implements OnInit {
 
   productForm = this.fb.group({
-    title: [''],
-    price: []
+    title: ['', [Validators.required,Validators.minLength(1)]],
+    price: [null, [Validators.required]]
   })
 
-  constructor(private fb: FormBuilder, private httpService: HttpService, private _snackBar: MatSnackBar) {
+  constructor(private fb: FormBuilder, private httpService: HttpService) {
   }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.openSnackBar('Продукт добавлен', 'ЗАКРЫТЬ')
     this.httpService.createProduct(this.productForm.value)
-    this.productForm.reset()
   }
-
-  openSnackBar(message: string, action: string) {
-    if (this.productForm.value.title.length > 0 && this.productForm.value.price !== null) {
-      this._snackBar.open(message, action)
-    } else {
-      return
-    }
-  }
-
 }

@@ -11,7 +11,7 @@
       <mat-label>Цена</mat-label>
       <input type="number" formControlName="price" matInput>
     </mat-form-field>
-    <button type="submit" mat-button>ДОБАВИТЬ</button>
+    <button type="submit" mat-button [disabled]="productForm.invalid">ДОБАВИТЬ</button>
   </form>
 </div>
 
