@@ -12,12 +12,13 @@ export class HttpService {
 
   constructor(
     private db: AngularFireDatabase,
-    public router: Router
+    private router: Router
   ) {
     this.productsRef = db.list('product-list');
   }
 
   createProduct(product: ProductItem) {
+    this.router.navigate(['api/overview/catalog'])
     return this.productsRef.push({
       title: product.title,
       price: product.price,
