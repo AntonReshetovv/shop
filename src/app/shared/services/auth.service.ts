@@ -14,7 +14,7 @@ export class AuthService {
   ) {
   }
 
-  registration(authPayload: AuthPayload) {
+  registration(authPayload: AuthPayload): Promise<any> {
     return this.afAuth.createUserWithEmailAndPassword(authPayload.email, authPayload.password)
       .then(data => {
         console.log('registration', data)
@@ -26,7 +26,7 @@ export class AuthService {
       })
   }
 
-  login(authPayload: AuthPayload) {
+  login(authPayload: AuthPayload): Promise<any> {
     return this.afAuth.signInWithEmailAndPassword(authPayload.email, authPayload.password)
       .then(data => {
         console.log('loginData', data)
