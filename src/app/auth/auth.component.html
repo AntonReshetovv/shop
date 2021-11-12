@@ -1,0 +1,46 @@
+<div class='wrapper'>
+  <mat-toolbar color='primary'>
+    <span>Shop</span>
+  </mat-toolbar>
+  <div class='content'>
+    <mat-card class='card'>
+      <mat-card-title>{{isRegister ? 'Вход' : 'Регистрация'}}</mat-card-title>
+      <mat-card-subtitle>Укажите эл.почту и пароль</mat-card-subtitle>
+      <mat-card-content>
+        <form class='form' [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
+          <mat-form-field class='form__field'>
+            <mat-label>Эл.почта</mat-label>
+            <input type='email' formControlName='email' matInput>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
+              Укажите эл.почту правильно
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+              Адрес эл.почты не должен быть пустым
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class='form__field'>
+            <mat-label>Пароль</mat-label>
+            <input type='password' formControlName='password' matInput>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">
+              Пароль должен состоить мин. из 4 символов
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+              Пароль должен состоить мин. из 4 символов
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions>
+            <button type='submit' mat-button
+                    [disabled]='loginForm.invalid'>{{isRegister ? 'ВОЙТИ' : 'ЗАРЕГИСТРИРОВАТЬСЯ'}}</button>
+          </mat-card-actions>
+        </form>
+        <mat-card-actions>
+          <button class='btn_toggle' (click)='onToggle()'
+                  mat-button>{{isRegister ? 'Создать аккаунт' : 'Войти' }}</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
