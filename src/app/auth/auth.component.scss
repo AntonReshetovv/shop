@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-toolbar {
+  padding: 0 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+.card {
+  max-width: 250px;
+}
+
+.form {
+  &__field {
+    width: 100%;
+  }
+}
+
+.btn_toggle {
+  color: #3f51b5;
+}
