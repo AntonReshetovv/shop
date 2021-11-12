@@ -1,3 +1,6 @@
+#Настройки
+Чтобы запустить проект, нужно указать в environments конфиги  от firebase, данные конфиги хранятся у Антона Решетова - владельца этого проекта
+
 # MyShops
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
