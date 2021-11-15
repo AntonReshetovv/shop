@@ -3,26 +3,25 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { map } from 'rxjs/operators';
-import { ProductItem } from '../shared/interfaces/product-item';
-import { HttpService } from '../shared/services/http.service';
+import { ProductItem } from '../interfaces/product-item';
+import { ContentLayoutService } from '../content-layout.service';
 
 @Component({
-  selector: 'app-catalog',
-  templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss'],
+  selector: 'app-content-layout-catalog',
+  templateUrl: './content-layout-catalog.component.html',
+  styleUrls: ['./content-layout-catalog.component.scss'],
 })
-export class CatalogComponent implements OnInit {
-  products: ProductItem[] = [];
-
+export class ContentLayoutCatalogComponent implements OnInit {
   displayedColumns: string[] = ['title', 'price', 'action'];
   dataSource: any;
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: ContentLayoutService) {}
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource([]);
     this.getAll();
   }
 
@@ -39,8 +38,7 @@ export class CatalogComponent implements OnInit {
         )
       )
       .subscribe((data) => {
-        this.products = data;
-        this.dataSource = new MatTableDataSource(this.products);
+        this.dataSource = new MatTableDataSource(data);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       });
