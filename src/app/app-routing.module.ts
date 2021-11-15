@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogComponent } from './catalog/catalog.component';
-import { ContentLayoutComponent } from './shared/layout/content-layout/content-layout.component';
-import { ProductFormComponent } from './product-form/product-form.component';
+
+import { ContentLayoutComponent } from './content-layout/content-layout.component';
+import { ContentLayoutCatalogComponent } from './content-layout/content-layout-catalog/content-layout-catalog.component';
+import { ContentLayoutFormComponent } from './content-layout/content-layout-form/content-layout-form.component';
 import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
@@ -12,8 +13,8 @@ const routes: Routes = [
     path: 'overview',
     component: ContentLayoutComponent,
     children: [
-      { path: 'catalog', component: CatalogComponent },
-      { path: 'create-product', component: ProductFormComponent },
+      { path: 'catalog', component: ContentLayoutCatalogComponent },
+      { path: 'create-product', component: ContentLayoutFormComponent },
     ],
   },
 ];

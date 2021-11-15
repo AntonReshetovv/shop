@@ -8,26 +8,12 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CatalogComponent } from './catalog/catalog.component';
-import { ContentLayoutComponent } from './shared/layout/content-layout/content-layout.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { ProductFormComponent } from './product-form/product-form.component';
 import { AuthModule } from './auth/auth.module';
+import { ContentLayoutModule } from './content-layout/content-layout.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CatalogComponent,
-    ContentLayoutComponent,
-    ProductFormComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,14 +22,8 @@ import { AuthModule } from './auth/auth.module';
     AngularFireAuthModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatSidenavModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
     AuthModule,
+    ContentLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
